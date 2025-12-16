@@ -38,6 +38,19 @@ int main() {
 // Zadanie 3
 #include <iostream>
 using namespace std;
-struct trojkat {
-	
+struct t {
+	int a, b, c;
 };
+void przepisz(t trojkat_1, t* trojkat_2);
+
+void przepisz(t trojkat_1, t* trojkat_2) {
+	t* trojkat_2 = &trojkat_1;
+}
+
+int main() {
+	t trojkat_1 = { 2, 6, 595 };
+	t trojkat_2;
+	przepisz(trojkat_1, &trojkat_2);
+
+	cout << "Boki trojkata 2 to: " << trojkat_2.a << ", " << trojkat_2.b << ", " << trojkat_2.c << endl;
+}
